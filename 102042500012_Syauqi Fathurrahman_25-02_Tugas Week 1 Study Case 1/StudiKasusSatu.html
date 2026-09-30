@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syauqi Fathurrahman — Personal Web</title>
+
+    <!-- 2. HTML Favicon (monokrom, SVG data URI) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='bold' fill='%23000' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+    <!-- 5. HTML CSS (internal) | 8. HTML Font | 6. HTML Background / Color Text | 7. HTML Align -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000;          /* background */
+            color: #f5f5f5;                 /* color text */
+            text-align: center;             /* align */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 0 22px; }
+
+        /* ---------- HERO : foto + nama ---------- */
+        .hero { padding: 72px 0 32px; animation: fadeUp 0.9s ease-out; }
+
+        .photo img {
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f5f5f5;
+            filter: grayscale(100%);        /* pastikan monokrom */
+            background: #111;
+        }
+
+        h1 {
+            font-size: 2.4rem; font-weight: 700;
+            letter-spacing: -0.02em; margin: 24px 0 10px;
+        }
+
+        .info-line { color: #a1a1a6; font-size: 1rem; line-height: 1.6; }
+        .info-line strong { color: #f5f5f5; font-weight: 600; }
+
+        /* ---------- SOSMED ---------- */
+        .social { padding: 28px 0 8px; animation: fadeUp 0.9s ease-out 0.15s backwards; }
+        h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+        .social-links { display: flex; justify-content: center; gap: 14px; }
+        .social-links a {
+            width: 54px; height: 54px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50%;
+            color: #f5f5f5;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover { background: #f5f5f5; color: #000; transform: translateY(-3px); }
+        .social-links svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* ---------- PROFIL : tabel ---------- */
+        .profile { padding: 48px 0 12px; animation: fadeUp 0.9s ease-out 0.3s backwards; }
+        h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+        h4 { font-size: 0.85rem; font-weight: 500; color: #a1a1a6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px; }
+
+        table {
+            width: 100%; border-collapse: collapse;
+            background: #0d0d0d;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px; overflow: hidden;
+            text-align: left;
+        }
+        th, td { padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; }
+        tr:last-child th, tr:last-child td { border-bottom: none; }
+        th { color: #a1a1a6; font-weight: 500; width: 40%; }
+        td { color: #f5f5f5; font-weight: 600; }
+
+        /* ---------- DATE & TIME ---------- */
+        .datetime { padding: 36px 0 8px; animation: fadeUp 0.9s ease-out 0.45s backwards; }
+        h5 { font-size: 0.8rem; font-weight: 500; color: #a1a1a6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+        #waktu { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+
+        /* ---------- FOOTER ---------- */
+        footer { margin-top: 40px; padding: 24px 0 40px; border-top: 1px solid rgba(255,255,255,0.08); }
+        h6 { font-size: 0.8rem; font-weight: 400; color: #6e6e73; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.9rem; }
+            .photo img { width: 130px; height: 130px; }
+            th, td { padding: 12px 14px; font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <!-- 1. HTML Picture : ganti src dengan "foto.jpg" (simpan file foto bernama foto.jpg di folder yang sama dengan index.html) -->
+        <picture class="photo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23000000'/%3E%3C/svg%3E" alt="Foto Syauqi Fathurrahman">
+        </picture>
+
+        <!-- 4. HTML Heading -->
+        <h1>Syauqi Fathurrahman</h1>
+        <p class="info-line">
+            <strong>NIM 102042500012</strong><br>
+            Fakultas Rekayasa Industri · Sistem Informasi
+        </p>
+    </section>
+
+    <!-- ================= SOSIAL MEDIA ================= -->
+    <section class="social">
+        <h2>Terhubung dengan saya</h2>
+        <!-- 3. HTML Link : target="_blank" = buka di tab baru -->
+        <div class="social-links">
+            <a href="https://x.com/prabowo" target="_blank" rel="noopener" aria-label="X / Twitter">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://github.com/xxlloydzz" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/prabowo" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= PROFIL ================= -->
+    <section class="profile">
+        <h3>Profil</h3>
+        <h4>Data Akademik</h4>
+        <!-- 10. HTML Table -->
+        <table>
+            <tr><th scope="row">Nama Lengkap</th><td>Syauqi Fathurrahman</td></tr>
+            <tr><th scope="row">NIM</th><td>102042500012</td></tr>
+            <tr><th scope="row">Fakultas</th><td>Rekayasa Industri</td></tr>
+            <tr><th scope="row">Program Studi</th><td>Sistem Informasi</td></tr>
+        </table>
+    </section>
+
+    <!-- ================= DATE & TIME ================= -->
+    <section class="datetime">
+        <h5>Waktu Akses</h5>
+        <!-- 9. HTML Date and Time (diisi otomatis via JavaScript) -->
+        <p id="waktu">Memuat waktu...</p>
+    </section>
+
+    <footer>
+        <h6>© 2026 Syauqi Fathurrahman — Sistem Informasi</h6>
+    </footer>
+
+</div>
+
+<script>
+    // 9. HTML Date and Time : tampilkan tanggal & jam saat ini (live)
+    function updateWaktu() {
+        const now = new Date();
+        const tanggal = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        const jam = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\./g, ':');
+        document.getElementById('waktu').textContent = tanggal + ' · ' + jam + ' WIB';
+    }
+    updateWaktu();
+    setInterval(updateWaktu, 1000);
+</script>
+
+</body>
+</html>
